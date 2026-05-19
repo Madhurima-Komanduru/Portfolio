@@ -194,7 +194,7 @@ body::before{
   box-shadow:
   0 0 20px #8b5cf6;
 
-  animation:loading 2.5s ease forwards;
+  animation:loading 1s ease forwards;
 
 }
 

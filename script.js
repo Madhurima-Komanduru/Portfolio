@@ -90,7 +90,7 @@ window.addEventListener('load', () => {
 
     loader.classList.add('fade-out');
 
-  }, 2500);
+  }, 1000);
 
 });
 
