@@ -110,7 +110,7 @@ body::before{
 
   pointer-events:none;
 
-  z-index:9999;
+  z-index:100000;
 
   box-shadow:
   0 0 20px #8b5cf6,
@@ -160,7 +160,7 @@ rgba(139,92,246,0.05);
 
   pointer-events:none;
 
-  z-index:99999;
+  z-index:100001;
 
 }
 
@@ -346,9 +346,8 @@ margin:auto;
   text-transform:uppercase;
 
   text-shadow:
-  0 0 20px rgba(139,92,246,0.7),
-  0 0 50px rgba(139,92,246,0.5),
-  0 0 90px rgba(139,92,246,0.25);
+0 0 10px rgba(139,92,246,0.45),
+0 0 25px rgba(139,92,246,0.25);
 
 }
 
@@ -392,6 +391,43 @@ margin:auto;
 
   50%{
     transform:translateY(10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+
+
+/* ================= SCROLL ARROW ================= */
+
+.scroll-arrow{
+
+  position:absolute;
+
+  bottom:35px;
+
+  width:100%;
+
+  text-align:center;
+
+  font-size:2rem;
+
+  color:#a78bfa;
+
+  animation:bounceArrow 2s infinite;
+
+}
+
+@keyframes bounceArrow{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(12px);
   }
 
   100%{
@@ -454,8 +490,7 @@ section{
   0 0 30px rgba(139,92,246,0.5),
   0 0 60px rgba(139,92,246,0.3);
 
-  animation:floatImage 4s ease-in-out infinite;
-
+ 
 }
 
 .profile-img{
@@ -492,19 +527,60 @@ rgba(255,255,255,0.03)
 
 }
 
-@keyframes floatImage{
+/* ================= EXPERIENCE STYLE ABOUT ================= */
 
-  0%{
-    transform:translateY(0px);
-  }
+.experience-style{
 
-  50%{
-    transform:translateY(-15px);
-  }
+  position:relative;
 
-  100%{
-    transform:translateY(0px);
-  }
+  overflow:hidden;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 0 30px rgba(139,92,246,0.15);
+
+}
+
+/* LEFT GLOW LINE */
+
+.experience-style::before{
+
+  content:'';
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:5px;
+  height:100%;
+
+  background:
+  linear-gradient(
+  180deg,
+  #8b5cf6,
+  #4c1d95
+  );
+
+}
+
+/* ================= ABOUT CARD HOVER ================= */
+
+.experience-style:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 0 30px rgba(139,92,246,0.35),
+  0 0 60px rgba(139,92,246,0.15);
+
+  transition:0.4s ease;
 
 }
 
@@ -814,7 +890,7 @@ rgba(255,255,255,0.03)
 
 }
 
-/* ================= RIBBON NAV ================= */
+/* ================= RIBBON ================= */
 
 .ribbon{
 
@@ -825,23 +901,25 @@ rgba(255,255,255,0.03)
 
   transform:translateY(-50%);
 
-  width:70px;
-  height:180px;
+  width:90px;
+  height:70px;
 
   background:
   linear-gradient(
-  180deg,
-  rgba(139,92,246,0.9),
+  90deg,
+  rgba(139,92,246,0.95),
   rgba(91,33,182,0.95)
   );
 
+  /* LEFT ARROW SHAPE */
+
   clip-path:
   polygon(
-  0 0,
   100% 0,
-  100% 85%,
-  50% 100%,
-  0 85%
+  100% 100%,
+  20% 100%,
+  0 50%,
+  20% 0
   );
 
   display:flex;
@@ -849,11 +927,7 @@ rgba(255,255,255,0.03)
   justify-content:center;
   align-items:center;
 
-  writing-mode:vertical-rl;
-
-  letter-spacing:4px;
-
-  font-size:0.9rem;
+  font-size:1.8rem;
 
   font-weight:600;
 
@@ -867,11 +941,15 @@ rgba(255,255,255,0.03)
   0 0 20px rgba(139,92,246,0.5),
   0 0 60px rgba(139,92,246,0.3);
 
+  cursor:pointer;
+
 }
+
+/* HOVER */
 
 .ribbon:hover{
 
-  width:85px;
+  width:110px;
 
   box-shadow:
   0 0 30px rgba(139,92,246,0.8),
@@ -879,8 +957,43 @@ rgba(255,255,255,0.03)
 
 }
 
+/* OPEN STATE */
+
 .ribbon.active{
   right:240px;
+}
+
+/* ARROW ANIMATION */
+
+.ribbon span{
+
+  transition:0.4s ease;
+
+}
+
+.ribbon:hover span{
+
+  transform:translateX(-6px);
+
+}
+
+/* ================= CURSOR ON RIBBON ================= */
+
+.cursor.ribbon-hover{
+
+  width:60px;
+  height:60px;
+
+  background:
+  rgba(255,255,255,0.18);
+
+  border:
+  1px solid rgba(255,255,255,0.9);
+
+  box-shadow:
+  0 0 20px rgba(255,255,255,0.9),
+  0 0 50px rgba(255,255,255,0.5);
+
 }
 
 /* ================= SIDE NAV ================= */

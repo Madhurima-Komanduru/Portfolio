@@ -52,17 +52,38 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+
 /* ================= RIBBON NAV ================= */
 
-const menuBtn = document.getElementById('menuBtn');
+const ribbon = document.getElementById('menuBtn');
 
 const sideNav = document.getElementById('sideNav');
 
-menuBtn.addEventListener('click', () => {
+/* OPEN/CLOSE NAV */
+
+ribbon.addEventListener('click', () => {
 
   sideNav.classList.toggle('active');
 
-  menuBtn.classList.toggle('active');
+  ribbon.classList.toggle('active');
+
+});
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener('click', e => {
+
+  if(
+    !sideNav.contains(e.target) &&
+    !ribbon.contains(e.target)
+  ){
+
+    sideNav.classList.remove('active');
+
+    ribbon.classList.remove('active');
+
+  }
 
 });
 
@@ -276,5 +297,19 @@ hoverItems.forEach(item => {
     cursor.classList.remove('hover');
 
   });
+
+});
+
+/* ================= RIBBON CURSOR ================= */
+
+ribbon.addEventListener('mouseenter', () => {
+
+  cursor.classList.add('ribbon-hover');
+
+});
+
+ribbon.addEventListener('mouseleave', () => {
+
+  cursor.classList.remove('ribbon-hover');
 
 });
