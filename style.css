@@ -116,6 +116,33 @@ body::before{
   0 0 20px #8b5cf6,
   0 0 40px #8b5cf6;
 
+transition:
+width 0.3s ease,
+height 0.3s ease,
+background 0.3s ease,
+border 0.3s ease;
+
+}
+
+/* ================= CURSOR HOVER ================= */
+
+.cursor.hover{
+
+  width:60px;
+  height:60px;
+
+  background:
+  rgba(139,92,246,0.12);
+
+  border:
+  1px solid rgba(139,92,246,0.8);
+
+  backdrop-filter:blur(4px);
+
+  box-shadow:
+  0 0 25px rgba(139,92,246,0.8),
+  0 0 60px rgba(139,92,246,0.4);
+
 }
 
 .cursor-dot{

@@ -255,3 +255,26 @@ window.addEventListener('scroll', () => {
   });
 
 });
+
+
+/* ================= CURSOR HOVER EFFECT ================= */
+
+const hoverItems = document.querySelectorAll(
+  'button, a, .card, .project-card, .icon-box, .btn'
+);
+
+hoverItems.forEach(item => {
+
+  item.addEventListener('mouseenter', () => {
+
+    cursor.classList.add('hover');
+
+  });
+
+  item.addEventListener('mouseleave', () => {
+
+    cursor.classList.remove('hover');
+
+  });
+
+});
