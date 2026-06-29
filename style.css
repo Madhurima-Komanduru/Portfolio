@@ -599,7 +599,8 @@ rgba(255,255,255,0.03)
 
 .card{
 
-  height:260px;
+  min-height:260px;
+height:auto;
 
   background:
   linear-gradient(
